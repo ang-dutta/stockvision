@@ -25,6 +25,10 @@ import yfinance as yf
 import time
 from requests.exceptions import RequestException
 import re
+import gdown
+import os
+import pickle
+import streamlit as st
 
 # Initialize session state for user
 if 'user' not in st.session_state:
@@ -99,12 +103,16 @@ def get_cached_stock_history(ticker, period="60d", interval="1d"):
 
 @st.cache_resource
 def load_models():
+    model_file = "stock_models.pkl"
+    if not os.path.exists(model_file):
+        # Download the file from Google Drive
+        url = "https://drive.google.com/uc?id=15lNiZdxRyh-lbpaQUV5apcZIfhykPhAx"
+        st.info("Downloading model file, please wait...")
+        gdown.download(url, model_file, quiet=False)
+
     try:
-        with open("stock_models.pkl", "rb") as file:
-            return pickle.load(file)
-    except FileNotFoundError:
-        st.error("Model file not found. Please train models first.")
-        return {}
+        with open(model_file, "rb") as f:
+            return pickle.load(f)
     except Exception as e:
         st.error(f"Error loading models: {e}")
         return {}

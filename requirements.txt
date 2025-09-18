@@ -7,4 +7,5 @@ tensorflow
 scikit-learn
 plotly
 langchain
+langchain-community
 huggingface_hub

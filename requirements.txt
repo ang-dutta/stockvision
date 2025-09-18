@@ -10,3 +10,4 @@ langchain
 langchain-community
 huggingface_hub
 gdown
+xgboost

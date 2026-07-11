@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StockVision — AI-Powered Stock Prediction & Portfolio Intelligence</title>
+  <meta name="description" content="StockVision is an AI-powered platform for stock price prediction, portfolio risk analytics, and explainable investment intelligence." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Ticker tape -->
+  <div class="ticker-wrap" aria-hidden="true">
+    <div class="ticker" id="ticker"></div>
+  </div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <span class="logo">Stock<span class="logo-accent">Vision</span></span>
+      <nav class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#stack">Stack</a>
+        <a href="#status">Status</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Ensemble ML for Indian equities</p>
+        <h1>Reading the market's<br /><span class="hero-highlight">next move</span>, before it prints.</h1>
+        <p class="hero-sub">
+          StockVision combines LSTM, XGBoost, and Random Forest models with
+          technical-indicator features to forecast direction for 50+ Indian stocks.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/" target="_blank" rel="noopener">View on GitHub</a>
+          <a class="btn btn-ghost" href="#features">See what it does</a>
+        </div>
+      </div>
+      <div class="hero-panel" aria-hidden="true">
+        <div class="panel-head">
+          <span class="dot dot-red"></span><span class="dot dot-amber"></span><span class="dot dot-green"></span>
+          <span class="panel-title">forecast.session</span>
+        </div>
+        <svg class="spark" viewBox="0 0 400 140" preserveAspectRatio="none">
+          <polyline class="spark-line spark-actual" points="0,100 40,90 80,95 120,70 160,80 200,55 240,60 280,40 320,45 360,30 400,35" />
+          <polyline class="spark-line spark-pred" points="360,30 400,35 440,20" />
+        </svg>
+        <div class="panel-metrics">
+          <div><span class="metric-label">Model</span><span class="metric-val">LSTM+XGB+RF</span></div>
+          <div><span class="metric-label">Coverage</span><span class="metric-val">50+ stocks</span></div>
+          <div><span class="metric-label">Accuracy</span><span class="metric-val metric-up">~72%</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <p class="section-eyebrow">What it does</p>
+      <h2>Core capabilities</h2>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <span class="feature-index">Ensemble prediction</span>
+          <h3>LSTM + XGBoost + Random Forest</h3>
+          <p>Combines a sequence model with two tree-based models, improving directional accuracy over any single baseline.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">Feature engineering</span>
+          <h3>5+ technical indicators</h3>
+          <p>RSI, ADX, MACD, Bollinger Bands, and ROC engineered as model inputs alongside raw price history.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">Accuracy</span>
+          <h3>~72% directional accuracy</h3>
+          <p>~12% lower prediction error than baseline single-model approaches, measured across the covered stock set.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">Coverage</span>
+          <h3>50+ Indian stocks</h3>
+          <p>Real-time charting and technical analysis across a broad set of NSE/BSE-listed names.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">Dashboard</span>
+          <h3>Interactive Streamlit interface</h3>
+          <p>Custom prediction requests, live charts, and technical-analysis views in a single interactive dashboard.</p>
+        </article>
+        <article class="feature-card">
+          <span class="feature-index">Accounts</span>
+          <h3>Auth & watchlists</h3>
+          <p>User authentication and personal watchlists backed by SQLite, so predictions and preferences persist per user.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="stack" id="stack">
+      <p class="section-eyebrow">Under the hood</p>
+      <h2>Tech stack</h2>
+      <div class="stack-grid">
+        <div class="stack-group">
+          <h4>Modeling</h4>
+          <ul>
+            <li>Python</li>
+            <li>LSTM (Keras/TensorFlow)</li>
+            <li>XGBoost, Random Forest</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <h4>Features</h4>
+          <ul>
+            <li>RSI, MACD, ADX</li>
+            <li>Bollinger Bands, ROC</li>
+            <li>OHLCV price history</li>
+          </ul>
+        </div>
+        <div class="stack-group">
+          <h4>App & storage</h4>
+          <ul>
+            <li>Streamlit dashboard</li>
+            <li>SQLite (auth, watchlists)</li>
+            <li>Vercel (this landing page)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="status" id="status">
+      <p class="section-eyebrow">Honest status</p>
+      <h2>This is a landing page, not the app</h2>
+      <p class="status-copy">
+        The Streamlit dashboard, ensemble models, and SQLite backend are built.
+        This page is a lightweight placeholder pointing to the project — the
+        actual dashboard runs separately. Source and setup instructions on GitHub.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>StockVision — built by Angela</span>
+    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
